@@ -20,24 +20,15 @@ from django.contrib import admin
 from django import VERSION
 
 # site-wide route mapping
-if VERSION[0] >= 2:
-    from django.urls import include path, include
-    urlpatterns = [
-        path('admin', admin.site.urls),
-        path('superheroes', include('superheroes.urls'))
-    ]
-else:
-    from django.conf.urls import url, include
-    urlpatterns = [
-        url(r'^admin/', admin.site.urls),
-        # example
-        # url(r'^my_app/', include('my_app.urls', namespace="myapp")),
-        url(r'^superheroes/', include('superheroes.urls', namespace="superheroes")),
-    ]
+from django.urls import path, include
+urlpatterns = [
+    path('admin', admin.site.urls),
+    path('superheroes/', include('superheroes.urls')),
+]
 
 # include Django Debug toolbar if DEBUG is set
 if settings.DEBUG:
     import debug_toolbar
     urlpatterns = [
-        url(r'^__debug__/', include(debug_toolbar.urls)),
+        path('__debug__/', include(debug_toolbar.urls)),
     ] + urlpatterns
