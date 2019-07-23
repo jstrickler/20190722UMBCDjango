@@ -23,7 +23,7 @@ from django import VERSION
 from django.urls import path, include
 urlpatterns = [
     path('admin', admin.site.urls),
-    path('', include('superheroes.urls')),
+    path('', include('superheroes.urls', namespace="superheroes")),
     # path('otherapp/', include('otherapp.urls')),
 ]
 

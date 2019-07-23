@@ -5,6 +5,8 @@
     <title>{{ hero.name }}</title>
 </head>
 <body>
+{# this is a comment #}
+
 <h1>{{ hero.name }}</h1>
 <h2>Secret Identity: {{ hero.secret_identity | upper }}</h2>
 <h2>Secret Identity (short):
@@ -19,3 +21,11 @@
 
 </body>
 </html>
+
+{% comment "a comment" %}
+stuff
+stuff
+stuff
+{% endcomment %}
+
+
