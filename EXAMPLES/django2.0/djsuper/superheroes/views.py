@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from .models import Superhero
 
 def home(request):
-    return HttpResponse("Welcome to my app")
+    return HttpResponse("Welcome to my SuperHero App!!! Bam!!")
 
 def hero(request, hero_name):
     s = Superhero.objects.get(name=hero_name)

@@ -23,7 +23,8 @@ from django import VERSION
 from django.urls import path, include
 urlpatterns = [
     path('admin', admin.site.urls),
-    path('superheroes/', include('superheroes.urls')),
+    path('', include('superheroes.urls')),
+    # path('otherapp/', include('otherapp.urls')),
 ]
 
 # include Django Debug toolbar if DEBUG is set

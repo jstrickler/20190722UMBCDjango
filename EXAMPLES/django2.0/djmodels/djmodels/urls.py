@@ -19,12 +19,13 @@ from django.conf import settings
 from django.conf.urls import url, include
 from django.contrib import admin
 from django import VERSION
+from django.urls import path
 
 # site-wide route mapping
 if VERSION[0] >= 2:
     urlpatterns = [
-        url(r'^admin/', admin.site.urls),
-        url(r'^superheroes/', include(('superheroes.urls', "superheroes"))),
+        path('admin', admin.site.urls),
+        path('superheroes/', include(('superheroes.urls', "superheroes"))),
     ]
 else:
     urlpatterns = [
@@ -38,5 +39,5 @@ else:
 if settings.DEBUG:
     import debug_toolbar
     urlpatterns = [
-        url(r'^__debug__/', include(debug_toolbar.urls)),
+        path('__debug__/', include(debug_toolbar.urls)),
     ] + urlpatterns
