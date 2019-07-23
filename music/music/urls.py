@@ -23,6 +23,7 @@ from django.contrib import admin
 # site-wide route mapping
 urlpatterns = [
     path('admin', admin.site.urls),
+    path('', include('bands.urls'))
     # To include urls from an app:
     #
     # path('', include(('app.urls'))),  # delegate to app's URL config
