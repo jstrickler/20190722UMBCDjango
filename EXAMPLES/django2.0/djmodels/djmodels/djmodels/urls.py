@@ -21,15 +21,15 @@ from django.contrib import admin
 
 # site-wide route mapping
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     # example
     # url(r'^my_app/', include('my_app.urls', namespace="myapp")),
-    url(r'^superheroes/', include('superheroes.urls', namespace="superheroes")),
+    path('superheroes/', include('superheroes.urls', namespace="superheroes")),
 ]
 
 # include Django Debug toolbar if DEBUG is set
 if settings.DEBUG:
     import debug_toolbar
     urlpatterns = [
-        url(r'^__debug__/', include(debug_toolbar.urls)),
+        path('__debug__/', include(debug_toolbar.urls)),
     ] + urlpatterns

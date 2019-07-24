@@ -11,7 +11,8 @@ from . import viewsqueries
 app_name = 'superheroes'
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('', views.home, name='home'),  # 'superheroes:home'
+                                        # 'NAMESPACE:VIEW'
     path('hero/<str:hero_name>/', views.hero, name="hero"),
 
 

@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'superheroes',
+    'superheroes.apps.SuperheroesConfig',
 ]
 
 MIDDLEWARE = [
@@ -63,7 +63,7 @@ if DEBUG:
 
 
 # look for URLS in PROJECT/PROJECT/urls.py
-ROOT_URLCONF = 'djsuper.urls'
+ROOT_URLCONF = 'djsuper.urls'  # djsuper/urls.py
 
 TEMPLATES = [
     {
