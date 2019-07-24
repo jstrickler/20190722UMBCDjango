@@ -19,7 +19,7 @@ urlpatterns = [
     # NO view -- don't do this:
     path(
         'noview',
-        TemplateView.as_view(template_name='noview.html'),
+        TemplateView.as_view(template_name='superheroes/generic_only.html'),
         name="noview",
     ),
 
