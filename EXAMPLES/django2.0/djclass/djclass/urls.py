@@ -18,7 +18,6 @@ Including another (usually an app's) URLconf:
 from django.conf import settings
 from django.urls import path, include
 from django.contrib import admin
-from django import VERSION
 
 # site-wide route mapping
 urlpatterns = [

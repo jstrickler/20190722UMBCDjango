@@ -10,6 +10,7 @@ def home(request):
 def show_band(request, band_name):
     band = get_object_or_404(Band, name=band_name)
     data = {
+        "dontdothis": "<h1>Party on, Dude!</h1>",
         "band_name": band.name,
         "band_genre": band.genre.name,
         "band_members": ', '.join(m.last_name for m in band.members.all()),

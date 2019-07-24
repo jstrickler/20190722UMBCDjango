@@ -33,7 +33,7 @@ def hero_queries(request):
         'Superhero.objects.filter(name__contains="man")[:2]',
         '''Superhero.objects.filter(
             enemies__name__icontains="Luthor").first().name''',
-        'Superhero.objects.filter(q_hulk | q_woman)',
+        'Superhero.objects.filter(q_hulk & q_woman)',
     ]
 
     query_pairs = [

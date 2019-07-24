@@ -42,12 +42,18 @@ class Superhero(models.Model):
     def __str__(self):
         return self.name
 
-    class Meta():
-        ordering = ['secret_identity']
+    class Meta:
+        ordering = ['name']
+        # db_table = 'superheroes'
+        # managed = False  # Django will NOT update
+        # ordering = ['name', '-secret_identiy', 'city__name']
 
     def get_brief_enemies(self):
         enemies = [e.name.split()[-1] for e in self.enemies.all()]
         return '/'.join(enemies)
+
+    def get_spoiler(self):
+        return "{} is {}".format(self.secret_identity, self.name)
 
     def save(self, *args, **kwargs):
         logging.info("Created superhero {}".format(self.name))
