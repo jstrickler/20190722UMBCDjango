@@ -3,9 +3,11 @@
 
     These are forms illustrating how forms work in Django
 """
-from django.shortcuts import get_object_or_404, render
+import pdb
+from django.shortcuts import get_object_or_404, render, redirect
 from .forms import DemoForm, HeroForm, HeroModel
 from .models import Superhero
+import os
 
 def home(request):
     """
@@ -15,8 +17,9 @@ def home(request):
     :return: HTTP Response
     """
     data = {
-        'message': 'Welcome to the superheroes app for forms',
+        'message': 'Welcome to the superheroes app for frogs',
     }
+    print("FROGS! FROGS!")
     return render(request, 'home.html', data)
 
 
@@ -37,7 +40,8 @@ def demoform(request):
                     'page_title': 'Form Fields Results',
                     'data': form.cleaned_data,
             }
-            return render(request, 'form_results.html', context)
+            return redirect('/superheroes')
+            # return render(request, 'form_results.html', context)
         else:
             # show form with errors for correcting
             invalid = True
@@ -103,7 +107,9 @@ def heromodel(request):
                 'secret_identity': form.cleaned_data['secret_identity'],
                 'real_name': form.cleaned_data['real_name'],
             }
-            # form.save()
+            hero = form.instance()
+            # hero.enemies.add(....)
+            hero.save()
             return render(request, 'hero_model_results.html', context)
 
     else:

@@ -39,11 +39,10 @@ class HeroForm(forms.Form):
         label="Color",
         choices=COLOR_CHOICES,
     )
-    submit = forms
 
 
 class HeroModel(forms.ModelForm):
-    class Meta():
+    class Meta:
         model = Superhero
         fields = ['name', 'real_name', 'city', 'secret_identity']
         labels = {

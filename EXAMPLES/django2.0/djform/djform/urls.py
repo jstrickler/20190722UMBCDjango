@@ -22,7 +22,7 @@ from django import VERSION
 
 # site-wide route mapping
 urlpatterns = [
-    path(r'^admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('superheroes/', include(
         'superheroes.urls', namespace="superheroes")),
 ]
