@@ -65,6 +65,8 @@ if DEBUG:
 # look for URLS in PROJECT/PROJECT/urls.py
 ROOT_URLCONF = 'djsuper.urls'  # djsuper/urls.py
 
+LOGIN_URL = '/login'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

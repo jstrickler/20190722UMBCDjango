@@ -79,5 +79,7 @@ urlpatterns = [
     path(
         'session2', views.session2, name='session2'
     ),
+    path('login/', views.login, name='login'),
+    path('logout/', views.logout, name='logout'),
 ]
 
