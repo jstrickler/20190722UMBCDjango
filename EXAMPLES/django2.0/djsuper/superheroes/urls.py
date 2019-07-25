@@ -73,5 +73,11 @@ urlpatterns = [
         viewsqueries.hero_queries,
         name="heroqueries",
     ),
+    path(
+        'session1', views.session1, name='session1'
+    ),
+    path(
+        'session2', views.session2, name='session2'
+    ),
 ]
 

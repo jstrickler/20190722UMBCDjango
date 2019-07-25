@@ -2,10 +2,12 @@
 # (c) 2016 John Strickler
 #
 from django.shortcuts import get_object_or_404, render
+from django.contrib.auth.decorators import login_required
 from .models import Superhero
 from django.http import HttpResponse
 from django.template.loader import get_template
 
+@login_required
 def hero_hard_way(request, hero_name):
     hero =  get_object_or_404(Superhero, name=hero_name)
     data = {

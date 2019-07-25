@@ -1,4 +1,4 @@
-"""djroute URL Mapping
+"""djsimpform URL Mapping
 
 The `urlpatterns` list maps URLs to views. More information:
     https://docs.djangoproject.com/en/2.1/topics/http/urls/
@@ -15,23 +15,24 @@ Including another (usually an app's) URLconf:
     1. Import the include() function: from django.urls import url, include
     2. Add a URL to urlpatterns:  path('appname', include('app.urls', namespace="app"))
     Path may be blank; in that case only the app URL is used
+
+    -----------------------------------------------------------------------------------
+    NOTE: when using the namespace argument with include(), the app's urls.py MUST have
+
+        app_name="APPNAME"
+
+    before  urlpatterns = ...
+    -----------------------------------------------------------------------------------
 """
 from django.conf import settings
 from django.urls import path, include
 from django.contrib import admin
-import demo.views
 
-# site-wide route mapping
 urlpatterns = [
     path('admin', admin.site.urls),
-    path('', include('demo.urls', namespace="demo")),
-    path('routing/', include('demo.urls', namespace="routing")),
-    path('demo/home', demo.views.home),
-    path('this/is/just/text', demo.views.home),
-    path('any/thing/you/want', demo.views.home)
+    path('', include('simpform.urls', namespace="simpform")),
 ]
 
-# include Django Debug toolbar if DEBUG is set
 if settings.DEBUG:
     import debug_toolbar
     urlpatterns = [

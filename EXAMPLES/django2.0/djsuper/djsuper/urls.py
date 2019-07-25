@@ -22,9 +22,9 @@ from django import VERSION
 # site-wide route mapping
 from django.urls import path, include
 urlpatterns = [
-    path('admin', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('', include('superheroes.urls', namespace="superheroes")),
-    path('extra/', include('superheroes.more_urls', namespace="extraheroes")),
+    # path('extra/', include('superheroes.more_urls', namespace="extraheroes")),
     # path('otherapp/', include('otherapp.urls')),
 ]
 

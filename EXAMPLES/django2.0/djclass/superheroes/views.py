@@ -25,10 +25,12 @@ class HeroDetailViewMinimal(DetailView):
 class HeroListView(ListView):
     context_object_name = 'heroes'
     model = Superhero
+    template_name = 'superheroes/hero_list.html'
 
 class HeroDetailView(DetailView):
     context_object_name = 'hero'
     model = Superhero
+    template_name = "superheroes/hero_detail.html"
 
 class HeroCreateView(CreateView):
     model = Superhero

@@ -19,7 +19,7 @@ def home(request):
     data = {
         'message': 'Welcome to the superheroes app for frogs',
     }
-    print("FROGS! FROGS!")
+    pdb.set_trace()
     return render(request, 'home.html', data)
 
 
