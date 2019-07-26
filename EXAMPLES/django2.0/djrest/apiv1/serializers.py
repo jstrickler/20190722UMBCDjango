@@ -4,6 +4,7 @@
 from rest_framework import serializers
 from superheroes.models import Superhero, City, Power, Enemy
 
+
 class SuperheroSerializer(serializers.ModelSerializer):
     city = serializers.StringRelatedField()
     enemies = serializers.StringRelatedField(many=True)

@@ -7,10 +7,10 @@ from django.views.generic import TemplateView
 from . import views
 
 urlpatterns = [
-    # welcome page, no class-based views
+    # welcome page
     path(
         '',
-        views.HomeView.as_view,
+        views.HomeView.as_view(),
         name = 'home'
     ),
 
@@ -27,8 +27,8 @@ urlpatterns = [
         views.HeroListViewMinimal.as_view(),
         name="minimallist",
     ),
-    url(
-        r'(?i)minimaldetails/(?P<pk>\d+)$',
+    path(
+        'minimaldetails/<int:pk>',
         views.HeroDetailViewMinimal.as_view(),
         name="minimaldetails",
     ),

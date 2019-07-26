@@ -7,7 +7,6 @@ from django.shortcuts import get_object_or_404
 from .models import Superhero
 from .forms import LoginForm
 
-@login_required
 def home(request):
     request.session['color'] = 'red'
     request.session['city'] = 'Baltimore'
@@ -26,7 +25,7 @@ def session2(request):
     }
     return render(request, 'sessioninfo.html', data)
 
-
+@login_required
 def hero(request, hero_name):
     color = request.session['color']
 
@@ -89,4 +88,4 @@ def login(request, next=''):
 def logout(request):
     django.contrib.auth.logout(request)
 
-    return HttpResponseRedirect(reverse(''))
+    return HttpResponseRedirect('/')

@@ -27,6 +27,8 @@ class Superhero(models.Model):
     city = models.ForeignKey(City, on_delete=models.CASCADE)
     powers = models.ManyToManyField(Power)
     enemies = models.ManyToManyField(Enemy)
+    favorite_fruit = models.CharField(max_length=32, default="")
+    # secret_number = models.FloatField(default=1)
 
     def __str__(self):
         return self.name
